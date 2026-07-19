@@ -23,7 +23,7 @@ Sección de Settings
 Ya con el contenido reemplazado y el compilador correcto oprimir "Recompile"
 
 ### Opción 2 Local (Editor de LaTeX)
-Se recomienda esta opción si se quiere total control y menores limitaciones a Overleaf
+Se recomienda esta opción si se quiere total control y menores limitaciones en comparación con Overleaf
 #### 1. Instalar motor LaTeX (MiKTeX)
 [Ir al sitio Oficial de MiKTeX](https://miktex.org/download)
 
