@@ -38,5 +38,5 @@ git clone https://github.com/jota2209/GA2-220501106-AA2-EV03.git
 Estando en Texstudio en la barra superior "Archivo/Abrir..." seleccionar la ruta donde se descargó el contenido del repositorio y abrir el fichero `.tex` correspondiente, en la misma barra superior en "Opciones/Configurar TeXstudio.../Compilar" cambiar el compilador por defecto a XeLaTeX y oprimir "Aceptar"
 
 ![textstudio bar](/images/texstudio_bar.png) Barra de opciones TeXstudio
-![textstudio settings](/images/texstudio_settings.png) Barra de opciones TeXstudio
+![textstudio settings](/images/texstudio_settings.png) Barra de opciones TeXstudio \
 Finalmente con el botón ![textstudio botón compilar y ver](/images/texstudio_buttoncv.png) (Compilar & Ver) se puede visualizar el documento y además renderizar y producir pdf.
