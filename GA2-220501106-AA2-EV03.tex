@@ -1,0 +1,225 @@
+% C1 Inicio del Preámbulo
+
+% C1.1 Definición de la Clase de Documento
+\documentclass[12pt, doc]{apa7} % <--- Define el tipo de documento y el tamaño de fuente (12 pt)
+
+% C1.2 Configuración de Idioma y Fuentes
+\usepackage[utf8]{inputenc} % <--- Soporte para caracteres especiales y tildes
+\usepackage[spanish]{babel} % <--- Configura el documento y los términos del sistema al español
+\usepackage{fontspec} % <--- Gestor avanzado para la carga de fuentes del sistema
+\setmainfont{Times New Roman} % <--- Obliga a usar Times New Roman como tipografía principal
+
+% C1.3 Geometría y Maquetación de la Página
+\usepackage[left=1in,right=1in,top=1in,bottom=1in]{geometry} % <--- Definición de márgenes estándar según APA 7
+\usepackage{pdflscape} % <--- Permite rotar páginas individuales a orientación horizontal
+\usepackage{setspace} % <--- Control milimétrico sobre el interlineado del documento
+\parindent=0.5in % <--- Define la sangría de los párrafos siguiendo las reglas APA
+
+% C1.4 Elementos Visuales y Manejo de Color
+\usepackage{graphicx} % <--- Soporte para la inserción de imágenes externas (PNG, JPG, PDF)
+\usepackage{xcolor} % <--- Soporte para la gestión y creación de colores personalizados
+\definecolor{codegray}{rgb}{0.95,0.95,0.95} % <--- Color gris claro para el fondo de los bloques de código
+\definecolor{codeblue}{rgb}{0.0,0.4,0.7} % <--- Color azul oscuro corporativo para palabras clave
+
+% C1.5 Hipervínculos y Navegación del Documento
+\usepackage{hyperref} % <--- Transforma el índice, URLs y referencias cruzadas en enlaces interactivos
+\hypersetup{
+	pdfborder={0 0 0} % <--- Elimina por completo los bordes rojos predeterminados de los enlaces
+}
+
+% C1.6 Estructura de Tablas Avanzadas
+\usepackage{array} % <--- Alineación precisa y configuraciones personalizadas de columnas
+\usepackage{tabularx} % <--- Modifica las tablas para permitir un ancho fijo y ajuste de texto automático
+\usepackage{ltablex} % <--- Combina tablas largas que saltan de página con las características de tabularx
+\keepXColumns % <--- Mantiene el comportamiento dinámico original de las columnas X en ltablex
+\usepackage{booktabs} % <--- Líneas horizontales de alta calidad (toprule, midrule, bottomrule)
+
+% C1.7 Bloques de Código Fuente (Listings)
+\usepackage{listings} % <--- Paquete principal para incrustar y dar estilo a fragmentos de código
+\lstset{
+	backgroundcolor=\color{codegray}, % <--- Aplica el fondo gris personalizado
+	basicstyle=\ttfamily\small, % <--- Tipografía monoespaciada y tamaño ligeramente más pequeño
+	breaklines=true, % <--- Ajusta automáticamente las líneas que superan los márgenes del texto
+	keywordstyle=\color{codeblue}, % <--- Aplica el color azul a las palabras clave nativas
+	frame=single, % <--- Dibuja un recuadro simple de una sola línea alrededor del código
+	rulecolor=\color{lightgray}, % <--- Aplica un color gris claro al borde del recuadro
+	numbers=left, % <--- Activa la numeración de líneas en el margen izquierdo
+	numberstyle=\tiny\color{gray}, % <--- Estilo gris y diminuto para los números de línea
+	stepnumber=1, % <--- Incrementa los números de línea de uno en uno (numera todas las líneas)
+	showstringspaces=false % <--- Desactiva símbolos extraños en los espacios en blanco de cadenas de texto
+}
+
+% C1.8 Definición de Lenguaje YAML Personalizado para Listings
+\lstdefinelanguage{yaml}{
+	keywords={version, services, db, image, container_name, restart, environment, ports, volumes}, % <--- Palabras clave de Docker
+	keywordstyle=\color{codeblue}\bfseries, % <--- Resalta las palabras clave en azul y negrita
+	basicstyle=\ttfamily\small, % <--- Fuerza el uso de la fuente monoespaciada
+	sensitive=false, % <--- Ignora la distinción estricta entre mayúsculas y minúsculas
+	comment=[l]{\#}, % <--- Define el carácter '#' como inicio de comentario de una línea
+	commentstyle=\color{gray}\ttfamily, % <--- Aplica color gris a los comentarios
+	stringstyle=\color{purple}\ttfamily, % <--- Aplica color púrpura al texto entre comillas
+	moredelim=[l][\color{orange}]{\:} % <--- Resalta los dos puntos (:) de YAML en color naranja
+}
+
+% C1.9 Metadatos y Afiliación Académica
+\title{} % <--- Contenedor del título (Se deja vacío debido al diseño de portada manual)
+\author{} % <--- Contenedor del autor (Se deja vacío debido al diseño de portada manual)
+\shorttitle{} % <--- Título corto para el encabezado (Se deja vacío por la portada manual)
+\affiliation{ % <--- Contenedor nativo de metadatos de afiliación institucional de APA
+	SENA - Centro de Electricidad, Electrónica y Telecomunicaciones \\
+	Tgo. en Gestión e Implementación de Bases de Datos - 3466363 \\
+	Ing. María Luz Camacho Parra \\
+	17 de mayo de 2026
+}
+
+% C1.10 Utilidades de Relleno
+\usepackage{lipsum} % <--- Generador de texto falso para pruebas de diseño y maquetación
+% ---------------------- FIN DEL PREAMBULO --------------------------------------------------
+
+%Cuerpo del documento
+\begin{document}
+	% --- PORTADA MANUAL ---
+	\begin{titlepage}
+		\centering
+		\setstretch{1.5} % Espaciado un poco más cerrado para la portada
+		
+		%\vspace*{1cm} % Espacio en blanco arriba
+		
+		{\Large\bfseries GA2-220501106-AA2-EV03. Informe de despliegue de servidores \par} % Título en negrita y grande
+		
+		\vspace{5.5cm} % Espacio entre título y autores
+		
+		{\large \textbf{Integrantes:} \par}
+		\vspace{0.3cm}
+		Angie Paola Sepúlveda Moreno \\
+		Jhon Octavio Parra Martínez \\
+		John Jairo Duarte Aponte \\
+		Jorge Andrés Castellanos Soler \\
+		José Roberto Pérez Cano \\
+		
+		\vfill % Empuja el resto del texto hacia la parte inferior de la página
+		
+		SENA - Centro de Electricidad, Electrónica y Telecomunicaciones \\
+		Tgo. en Gestión e Implementación de Bases de Datos - 3466363 \\
+		
+		\vspace{1cm}
+		
+		\textbf{Docente:} \\
+		Ing. Andrés Quevedo \\
+		
+		\vspace{1.5cm}
+		
+		18 de julio de 2026 \par
+		
+	\end{titlepage}
+	% --- FIN DE LA PORTADA ---
+	
+	\newpage
+	\setstretch{1.15} % Un espaciado más cómodo para el índice
+	\tableofcontents % <--- Este comando genera la tabla automáticamente
+	\newpage
+	\doublespacing
+	
+	% --- INTRODUCCIÓN ---
+	\section{Introducción}
+	En el desarrollo de software moderno y la administración de bases de datos, la eficiencia en el despliegue y la consistencia de los entornos de ejecución son pilares fundamentales. Tradicionalmente, la configuración de servidores de bases de datos requería largos procesos de instalación de dependencias, propensos al clásico error de configuración local. 
+	
+	El presente informe documenta el proceso de despliegue de un servidor de bases de datos relacionales utilizando \textbf{PostgreSQL} bajo la tecnología de contenerización de \textbf{Docker}. Se abordan los conceptos teóricos clave que diferencian a los contenedores de la virtualización clásica y se exponen detalladamente dos metodologías de despliegue en entornos Linux: mediante la interfaz de línea de comandos de Docker Engine y de forma declarativa utilizando Docker Compose.
+	
+	% --- CONCEPTUALIZACIÓN ---
+	\section{Conceptualización y Marco Teórico}
+	
+	\subsection{¿Qué es Docker?}
+	Docker es una plataforma de código abierto que automatiza el despliegue de aplicaciones dentro de contenedores de software. Un contenedor empaqueta el código de la aplicación junto con todas sus dependencias, librerías y archivos de configuración necesarios para su ejecución, garantizando que la aplicación funcione de manera idéntica en cualquier entorno físico o en la nube.
+	
+	\subsection{Diferencia entre Contenedores y Máquinas Virtuales (VM)}
+	A diferencia de las Máquinas Virtuales tradicionales, que requieren un hipervisor y un sistema operativo invitado (Guest OS) completo por cada instancia (lo que consume valiosos recursos de memoria RAM y almacenamiento), los contenedores de Docker comparten el mismo núcleo (kernel) del sistema operativo del host. Esto los hace extremadamente ligeros, con tiempos de arranque en cuestión de segundos y un consumo de recursos drásticamente menor.
+	
+	\begin{table}[h!]
+		\centering
+		\caption{Comparativa: Contenedores Docker vs. Máquinas Virtuales}
+		\vspace{0.2cm}
+		\begin{tabular}{lll}
+			\toprule
+			\textbf{Característica} & \textbf{Docker (Contenedores)} & \textbf{Máquinas Virtuales (VM)} \\
+			\midrule
+			\textbf{Arquitectura} & Comparte el Kernel del Host & Sistema Operativo completo independiente \\
+			\textbf{Peso} & Ligero (Megabytes) & Pesado (Gigabytes) \\
+			\textbf{Rendimiento} & Casi nativo & Pérdida por virtualización (Hipervisor) \\
+			\textbf{Aislamiento} & A nivel de proceso (Namespaces) & A nivel de hardware virtualizado \\
+			\textbf{Inicio} & Segundos & Minutos \\
+			\bottomrule
+		\end{tabular}
+	\end{table}
+	
+	% --- DESPLIEGUE ---
+	\section{Despliegue del Servidor PostgreSQL}
+	Para el ejercicio práctico, se seleccionó el motor de base de datos relacional \textbf{PostgreSQL}. A continuación se detallan las dos metodologías implementadas.
+	
+	\subsection{Método 1: Despliegue mediante Docker Engine (CLI)}
+	Este enfoque utiliza comandos directos en la terminal para descargar la imagen oficial y arrancar el contenedor de manera inmediata.
+	
+	\begin{lstlisting}[language=bash, caption={Comando para desplegar PostgreSQL desde la CLI}]
+		docker run --name pg-server-cli \
+		-e POSTGRES_USER=admin \
+		-e POSTGRES_PASSWORD=mi_clave_segura \
+		-e POSTGRES_DB=data_db \
+		-p 5432:5432 \
+		-v pg_data_cli:/var/lib/postgresql/data \
+		-d postgres:15-alpine
+	\end{lstlisting}
+	
+	\paragraph{Explicación de parámetros:}
+	\begin{itemize}
+		\item \texttt{--name}: Asigna un nombre amigable al contenedor para su posterior administración.
+		\item \texttt{-e}: Define las variables de entorno obligatorias para inicializar la base de datos (usuario, contraseña y base de datos inicial).
+		\item \texttt{-p}: Mapea el puerto \texttt{5432} del contenedor al puerto \texttt{5432} de la máquina host.
+		\item \texttt{-v}: Crea un volumen nombrado para garantizar la persistencia de los datos, evitando la pérdida de información al destruir el contenedor.
+		\item \texttt{-d}: Ejecuta el contenedor en modo \textit{detached} (en segundo plano).
+	\end{itemize}
+	
+	\subsection{Método 2: Despliegue mediante Docker Compose}
+	Docker Compose permite definir entornos multi-contenedor de forma declarativa mediante un archivo de configuración estructurado en formato YAML (\texttt{docker-compose.yml}).
+	
+	\begin{lstlisting}[language=yaml, caption={Archivo docker-compose.yml para PostgreSQL}]
+		version: '3.8'
+		
+		services:
+		db:
+		image: postgres:15-alpine
+		container_name: pg-server-compose
+		restart: always
+		environment:
+		POSTGRES_USER: admin
+		POSTGRES_PASSWORD: mi_clave_segura
+		POSTGRES_DB: data_db
+		ports:
+		- "5432:5432"
+		volumes:
+		- pg_data_compose:/var/lib/postgresql/data
+		
+		volumes:
+		pg_data_compose:
+	\end{lstlisting}
+	
+	Para iniciar este servicio de manera controlada, se ejecuta el siguiente comando en el mismo directorio del archivo:
+	\begin{lstlisting}[language=bash, caption={Comando para inicializar Docker Compose}]
+		docker compose up -d
+	\end{lstlisting}
+	
+	% --- COMPARATIVA Y DIFERENCIAS ---
+	\subsection{Diferencias entre ambas Metodologías de Despliegue}
+	Mientras que el uso de comandos de \textbf{Docker Engine} es ideal para pruebas rápidas y efímeras en entornos locales, presenta serias desventajas en entornos productivos debido a la dificultad de mantener comandos extensos en el historial de la terminal. 
+	
+	Por otro lado, \textbf{Docker Compose} centraliza la configuración de la infraestructura en un archivo de texto plano, facilitando la orquestación de servicios interconectados (como una API y una base de datos en una red aislada), permitiendo además el control de versiones a través de Git y asegurando que cualquier miembro del equipo pueda replicar exactamente el mismo entorno con un único comando estándar.
+	
+	% --- CONCLUSIONES ---
+	\section{Conclusiones}
+	\begin{itemize}
+		\item La adopción de contenedores Docker optimiza significativamente la utilización de hardware en el despliegue de servidores frente a las máquinas virtuales convencionales, eliminando la sobrecarga que supone ejecutar sistemas operativos completos duplicados.
+		\item La persistencia de datos mediante volúmenes en Docker es un requisito indispensable al desplegar sistemas de gestión de bases de datos como PostgreSQL, aislando el ciclo de vida de la información del ciclo de vida del contenedor ejecutable.
+		\item Docker Compose se establece como una mejor práctica de desarrollo e infraestructura para el despliegue ordenado de proyectos, ya que documenta el estado deseado de los servidores y redes de forma clara, reproducible y mantenible en el tiempo.
+	\end{itemize}
+	
+\end{document}
+

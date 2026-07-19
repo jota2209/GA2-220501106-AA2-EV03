@@ -1,0 +1,7 @@
+# Ficheros de compilación LaTex y pdf generado
+*.pdf
+*.out
+*log
+*.aux
+*gz
+*.toc
