@@ -16,7 +16,7 @@ Esta opción no requiere descarga de programas pero para documentos muy largos p
 #### 3. Renderización de documento
 Al crear un proyecto nuevo se genera automáticamente código de ejemplo, seleccionar todo ese contenido y pegar el código del fichero con extensión `.tex`, en la barra superior en "File/Settings/Compiler elegir opción de XeLateX \
 ![Overleaf bar](/images/overleaf_bar.png)
-Barra de Opciones
+Barra Superior de Overleaf
 ![Overleaf settings](/images/overleaf_settings.png)
 Sección de Settings
 ![Overleaf document](/images/overleaf_document.png)
@@ -37,6 +37,6 @@ git clone https://github.com/jota2209/GA2-220501106-AA2-EV03.git
 #### 4. Abrir fichero .tex
 Estando en Texstudio en la barra superior "Archivo/Abrir..." seleccionar la ruta donde se descargó el contenido del repositorio y abrir el fichero `.tex` correspondiente, en la misma barra superior en "Opciones/Configurar TeXstudio.../Compilar" cambiar el compilador por defecto a XeLaTeX y oprimir "Aceptar"
 
-![textstudio bar](/images/texstudio_bar.png) Barra de opciones TeXstudio
+![textstudio bar](/images/texstudio_bar.png) Barra Superior de TeXstudio
 ![textstudio settings](/images/texstudio_settings.png) Barra de opciones TeXstudio \
 Finalmente con el botón ![textstudio botón compilar y ver](/images/texstudio_buttoncv.png) (Compilar & Ver) se puede visualizar el documento y además renderizar y producir pdf.
