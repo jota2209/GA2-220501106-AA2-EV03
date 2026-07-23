@@ -5,3 +5,10 @@
 *.aux
 *gz
 *.toc
+
+#Ficheros autogenerados de bibliografía
+*-blx.bib
+*.bbl
+*.bcf
+*.blg
+*.run.xml
