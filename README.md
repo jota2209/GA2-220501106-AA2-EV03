@@ -39,4 +39,7 @@ Estando en Texstudio en la barra superior "Archivo/Abrir..." seleccionar la ruta
 
 ![textstudio bar](/images/texstudio_bar.png) Barra Superior de TeXstudio
 ![textstudio settings](/images/texstudio_settings.png) Barra de opciones TeXstudio \
-Finalmente con el botón ![textstudio botón compilar y ver](/images/texstudio_buttoncv.png) (Compilar & Ver) se puede visualizar el documento y además renderizar y producir pdf.
+Finalmente con el botón ![textstudio botón compilar y ver](/images/texstudio_buttoncv.png) (Compilar & Ver) se puede visualizar el documento y además renderizar y producir. \
+\
+**Nota: también se pueden usar estos atajos: F6 (Compilar), F5 (Compilar y ver), F8 (Correr bibliografía).** para la bibliografía en la barra superior de texstudio en el mismo lugar de "Opciones/Configurar TeXstudio.../Compilar" encontraremos la opción para cambiar el motor de bibliografía para nuestro caso se uso el moderno llamado `Biber`
+![textstudio bar](/images/texstudio_bib.png) Opciones de motor bibliográfico.
