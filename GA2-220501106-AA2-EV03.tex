@@ -72,6 +72,11 @@
 	17 de mayo de 2026
 }
 
+% Configuración de bibliografía
+%\usepackage[style=numeric, backend=bibtex]{biblatex}
+\usepackage[style=apa, backend=biber]{biblatex}
+\addbibresource{referencias.bib}
+
 % C1.10 Utilidades de Relleno
 \usepackage{lipsum} % <--- Generador de texto falso para pruebas de diseño y maquetación
 % ---------------------- FIN DEL PREAMBULO --------------------------------------------------
@@ -220,6 +225,10 @@
 		\item La persistencia de datos mediante volúmenes en Docker es un requisito indispensable al desplegar sistemas de gestión de bases de datos como PostgreSQL, aislando el ciclo de vida de la información del ciclo de vida del contenedor ejecutable.
 		\item Docker Compose se establece como una mejor práctica de desarrollo e infraestructura para el despliegue ordenado de proyectos, ya que documenta el estado deseado de los servidores y redes de forma clara, reproducible y mantenible en el tiempo.
 	\end{itemize}
+	
+	\nocite{*} % Muestra todas las referencias del .bib
+	% Imprimir la bibliografía
+	\printbibliography[title={Referencias}]
 	
 \end{document}
 
